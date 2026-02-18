@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevFlow Portfolio</title>
+    <title>Julian Mauricio Chingal | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +13,7 @@
             scroll-behavior: smooth;
             background-color: #030712;
             color: #f9fafb;
+            overflow-x: hidden;
         }
         .font-mono {
             font-family: 'Fira Code', monospace;
@@ -27,6 +28,14 @@
             background: linear-gradient(to right, #60a5fa, #a78bfa, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        /* Ocultar scrollbar pero mantener funcionalidad */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         @keyframes blob {
             0% { transform: translate(0px, 0px) scale(1); }
