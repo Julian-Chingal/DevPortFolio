@@ -1,39 +1,62 @@
 
-import React from 'react';
-import { Project, Skill } from './types';
+import { Project, Skill, Experience } from './types';
 
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Aether Cloud Dashboard',
-    description: 'A real-time cloud infrastructure monitoring tool built with NestJS and TypeScript.',
-    tech: ['NestJS', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    imageUrl: 'https://picsum.photos/seed/aether/800/600'
+    title: 'Ecosistema NestJS & BI',
+    description: 'Arquitectura backend escalable con integración de dashboards analíticos para la toma de decisiones.',
+    tech: ['NestJS', 'TypeScript', 'Power BI', 'PostgreSQL'],
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '2',
-    title: 'Nebula Commerce',
-    description: 'High-performance content-driven e-commerce site optimized with Astro.',
-    tech: ['Astro', 'TypeScript', 'Tailwind', 'Node.js'],
-    imageUrl: 'https://picsum.photos/seed/nebula/800/600'
+    title: 'Automatización de Procesos',
+    description: 'Flujos de trabajo optimizados con Power Automate integrando APIs de FastAPI y servicios en la nube.',
+    tech: ['FastAPI', 'Power Automate', 'Python', 'Docker'],
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '3',
-    title: 'FastAPI Data Engine',
-    description: 'Custom microservice for high-speed data processing and AI integration.',
-    tech: ['FastAPI', 'Python', 'Docker', 'Gemini API'],
-    imageUrl: 'https://picsum.photos/seed/synth/800/600'
+    title: 'Portal Moderno Astro',
+    description: 'Interfaz de alto rendimiento con arquitectura de islas enfocada en SEO y experiencia de usuario.',
+    tech: ['Astro', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Node.js', level: 95, category: 'backend' },
-  { name: 'NestJS', level: 90, category: 'backend' },
-  { name: 'FastAPI', level: 85, category: 'backend' },
-  { name: 'TypeScript', level: 92, category: 'frontend' },
-  { name: 'Astro', level: 88, category: 'frontend' },
-  { name: 'Tailwind CSS', level: 90, category: 'frontend' },
-  { name: 'PostgreSQL', level: 85, category: 'tools' },
-  { name: 'Docker', level: 80, category: 'tools' },
-  { name: 'Git', level: 95, category: 'tools' }
+  { name: 'Node.js / NestJS', level: 95, category: 'backend' },
+  { name: 'FastAPI / Python', level: 88, category: 'backend' },
+  { name: 'TypeScript', level: 92, category: 'backend' },
+  { name: 'Astro', level: 90, category: 'frontend' },
+  { name: 'Tailwind CSS', level: 95, category: 'frontend' },
+  { name: 'React', level: 85, category: 'frontend' },
+  { name: 'Power BI', level: 85, category: 'data' },
+  { name: 'Power Automate', level: 90, category: 'data' },
+  { name: 'Analítica de Datos', level: 80, category: 'data' },
+  { name: 'Docker', level: 82, category: 'tools' },
+  { name: 'PostgreSQL / SQL', level: 90, category: 'tools' },
+  { name: 'Git / Scrum', level: 95, category: 'tools' }
+];
+
+export const EXPERIENCES: Experience[] = [
+  {
+    role: 'Ingeniero de Sistemas / Desarrollador Senior',
+    company: 'Proyectos Independientes & Consultoría',
+    period: '2022 - Presente',
+    description: 'Liderazgo técnico en el desarrollo de aplicaciones web de alto rendimiento y automatización de flujos empresariales.'
+  },
+  {
+    role: 'Especialista en Datos y Backend',
+    company: 'Empresa de Tecnología',
+    period: '2020 - 2022',
+    description: 'Implementación de arquitecturas basadas en microservicios y creación de dashboards de inteligencia de negocios.'
+  },
+  {
+    role: 'Analista de Sistemas',
+    company: 'Sector Corporativo',
+    period: '2018 - 2020',
+    description: 'Gestión de bases de datos y soporte en la transformación digital de procesos manuales.'
+  }
 ];

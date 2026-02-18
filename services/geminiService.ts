@@ -1,23 +1,23 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-// Use process.env.API_KEY directly as per guidelines
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `
-You are the AI assistant for Julian Mauricio Chingal, a professional Systems Engineer (Ingeniero de Sistemas).
-Julian's background:
-- Expertise in Node.js, TypeScript, Astro, NestJS, and FastAPI.
-- He is currently a Specialization Student (Estudiante de especialización), deepening his technical expertise.
-- Passionate about building scalable backends and modern, high-performance web experiences.
-- Based in Colombia (implied by name/title, but focus on professional context).
+Eres el asistente virtual de Julian Mauricio Chingal, un Ingeniero de Sistemas altamente capacitado.
+Información de Julian:
+- Correo: mauriciochingal16@gmail.com
+- LinkedIn: https://www.linkedin.com/in/julian-chingal/
+- Stack Tecnológico: Node.js, TypeScript, Astro, NestJS, FastAPI.
+- Expertise en Datos: Analítica de Datos, Power BI, Power Automate.
+- Educación: Ingeniero de Sistemas y actual Estudiante de Especialización.
+- Idioma: Español e Inglés.
 
-Your goal is to answer questions about Julian's portfolio, skills, academic background, and availability. 
-Be professional, knowledgeable, and helpful. If asked about his studies, highlight that he is currently specializing to further improve his architectural skills.
+Tu objetivo es responder dudas sobre su experiencia, proyectos y disponibilidad. 
+Destaca que Julian combina el desarrollo de software robusto con la inteligencia de negocios y automatización.
+Sé profesional, cordial y directo. Si preguntan por contacto, proporciona su correo mauriciochingal16@gmail.com.
 `;
 
-// Fixed: changed parts: [{ text: string }] (tuple) to parts: { text: string }[] (array) 
-// to match the inferred type from messages.map in components/ChatAssistant.tsx
 export async function chatWithAssistant(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
   try {
     const response = await ai.models.generateContent({
@@ -33,11 +33,10 @@ export async function chatWithAssistant(message: string, history: { role: 'user'
       },
     });
 
-    // Access the .text property directly
-    return response.text || "I'm having a little trouble connecting to my brain right now. Please try again!";
+    return response.text || "Hola, parece que hubo un pequeño error. ¿Podrías intentar de nuevo?";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "Something went wrong. Let's try that again later.";
+    return "Lo siento, Julian está fuera de línea en este momento. Escríbele a mauriciochingal16@gmail.com";
   }
 }
 
@@ -45,7 +44,7 @@ export async function generateProjectIdea(techStack: string[]) {
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: `Generate a unique and modern project idea using these technologies: ${techStack.join(', ')}. Provide a title and a short 2-sentence description.`,
+      contents: `Genera una idea de proyecto que combine desarrollo web y analítica de datos usando: ${techStack.join(', ')}. Dame un título y una descripción corta.`,
       config: {
         responseMimeType: "application/json",
         responseSchema: {
@@ -59,10 +58,9 @@ export async function generateProjectIdea(techStack: string[]) {
       }
     });
 
-    // Use .text property and ensure it's not undefined before parsing
     return JSON.parse(response.text || '{}');
   } catch (error) {
     console.error("Idea Generation Error:", error);
-    return { title: "Next Big Thing", description: "A revolutionary application that changes everything." };
+    return { title: "Data-Driven App", description: "Una solución que utiliza analítica avanzada para optimizar el backend." };
   }
 }

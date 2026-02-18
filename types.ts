@@ -11,7 +11,14 @@ export interface Project {
 export interface Skill {
   name: string;
   level: number;
-  category: 'frontend' | 'backend' | 'tools';
+  category: 'frontend' | 'backend' | 'tools' | 'data';
+}
+
+export interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
 }
 
 export interface ChatMessage {
@@ -23,6 +30,7 @@ export interface ChatMessage {
 export enum Section {
   HERO = 'hero',
   ABOUT = 'about',
+  EXPERIENCE = 'experience',
   SKILLS = 'skills',
   PROJECTS = 'projects',
   CONTACT = 'contact'
