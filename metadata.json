@@ -1,0 +1,8 @@
+{
+  "name": "Portfolio",
+  "description": "A high-end, AI-enhanced developer portfolio featuring dynamic project generation and a conversational career assistant powered by Gemini.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
